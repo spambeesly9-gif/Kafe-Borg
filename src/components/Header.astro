@@ -1,4 +1,6 @@
 ---
+import FacebookIcon from "./FacebookIcon.astro";
+
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/our-story/", label: "Our Story" },
@@ -34,12 +36,23 @@ const currentPath = Astro.url.pathname;
       }
     </nav>
 
-    <a
-      href="/visit/"
-      class="hidden rounded-full border border-coffee-900/20 px-4 py-2 font-body text-sm font-semibold text-coffee-900 transition-colors hover:border-red-600 hover:text-red-600 sm:inline-block"
-    >
-      Find the shop
-    </a>
+    <div class="hidden items-center gap-4 sm:flex">
+      <a
+        href="https://www.facebook.com/kafeborg"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Kafé Borg on Facebook"
+        class="text-coffee-700 transition-colors hover:text-red-600"
+      >
+        <FacebookIcon class="h-5 w-5" />
+      </a>
+      <a
+        href="/visit/"
+        class="rounded-full border border-coffee-900/20 px-4 py-2 font-body text-sm font-semibold text-coffee-900 transition-colors hover:border-red-600 hover:text-red-600"
+      >
+        Find the shop
+      </a>
+    </div>
 
     <details class="relative sm:hidden">
       <summary
@@ -63,6 +76,15 @@ const currentPath = Astro.url.pathname;
             </a>
           ))
         }
+        <a
+          href="https://www.facebook.com/kafeborg"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 rounded-lg px-3 py-2 font-body text-sm font-medium text-coffee-800 hover:bg-paper-deep"
+        >
+          <FacebookIcon class="h-4 w-4" />
+          Facebook
+        </a>
       </nav>
     </details>
   </div>
