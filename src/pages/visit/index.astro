@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import MalteseCross from "../../components/MalteseCross.astro";
+import storeFront from "../../assets/images/store-front.webp";
+
+const mapsHref =
+  "https://www.google.com/maps/search/?api=1&query=Kaf%C3%A9%20Borg%2C%20Tal-Balal%20Road%2C%20San%20Gwann%2C%20Malta";
+---
+
+<Layout
+  title="Visit Us"
+  description="Find Kafé Borg on Tal-Balal Road, San Gwann, Malta. Call, fax or email us, or come by the shop."
+>
+  <section class="bg-grain">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+      <p class="font-script text-2xl text-red-600">visit us</p>
+      <h1 class="mt-2 max-w-2xl font-display text-4xl font-semibold leading-tight text-coffee-950 text-balance sm:text-5xl">
+        Look for the red awning on Tal-Balal Road.
+      </h1>
+
+      <div class="mt-12 grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
+        <div class="-rotate-1 rounded-2xl border-8 border-cream-50 bg-cream-50 shadow-soft transition-transform duration-300 ease-out hover:-translate-y-1 hover:rotate-[2deg] hover:scale-105">
+          <Image
+            src={storeFront}
+            alt="The Kafé Borg shopfront with its red awning on Tal-Balal Road, San Gwann"
+            width={640}
+            height={853}
+            class="w-full rounded-xl object-cover"
+          />
+        </div>
+
+        <div class="space-y-8">
+          <div>
+            <h2 class="flex items-center gap-2 font-display text-xl font-semibold text-coffee-950">
+              <MalteseCross class="h-5 w-5 text-red-600" />
+              Address
+            </h2>
+            <address class="mt-3 font-body text-lg not-italic leading-relaxed text-coffee-700">
+              Kaf&eacute; Borg<br />
+              Tal-Balal Road<br />
+              San Gwann SGN 9018, Malta
+            </address>
+            <a
+              href={mapsHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-2 rounded-full bg-coffee-950 px-5 py-2.5 font-body text-sm font-semibold text-paper transition-colors hover:bg-red-700"
+            >
+              Get directions
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="h-px bg-coffee-900/10"></div>
+
+          <div>
+            <h2 class="flex items-center gap-2 font-display text-xl font-semibold text-coffee-950">
+              <MalteseCross class="h-5 w-5 text-red-600" />
+              Phone &amp; email
+            </h2>
+            <ul class="mt-3 space-y-2 font-body text-lg leading-relaxed text-coffee-700">
+              <li>
+                <a href="tel:+35621371626" class="hover:text-red-600">(+356) 2137 1626</a>
+              </li>
+              <li>
+                <a href="tel:+35621373208" class="hover:text-red-600">(+356) 2137 3208</a>
+              </li>
+              <li class="font-body text-base text-coffee-500">Fax: (+356) 2137 1626</li>
+              <li>
+                <a href="mailto:info@kafeborg.com" class="hover:text-red-600">info@kafeborg.com</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="h-px bg-coffee-900/10"></div>
+
+          <p class="font-body text-[15px] leading-relaxed text-coffee-600">
+            Not sure if we&rsquo;re open right now? A quick call to either number
+            above is the fastest way to check &mdash; we&rsquo;re a small shop, so
+            someone will pick up.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

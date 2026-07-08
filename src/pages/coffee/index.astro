@@ -1,0 +1,147 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import MalteseCross from "../../components/MalteseCross.astro";
+import coffeePack from "../../assets/images/coffee-pack.jpg";
+import beansBag from "../../assets/images/arabica-beans-bag.png";
+
+const extras = [
+  "Chicory",
+  "Sugar sachets",
+  "Plastic funnels",
+  "Plastic filters",
+];
+---
+
+<Layout
+  title="Coffee & Products"
+  description="Coffee beans sold by weight, ground to order, single origin or custom blends of two, three or four types — plus chicory, filters and funnels."
+>
+  <section class="bg-grain">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+      <p class="font-script text-2xl text-red-600">the coffee</p>
+      <h1 class="mt-2 max-w-2xl font-display text-4xl font-semibold leading-tight text-coffee-950 text-balance sm:text-5xl">
+        Sold by weight. Ground the way you actually drink it.
+      </h1>
+      <p class="mt-6 max-w-2xl font-body text-lg leading-relaxed text-coffee-700">
+        Most people either take their beans home whole and grind them
+        themselves, or have us grind it fresh, right there in the shop, matched
+        to whatever brewer they&rsquo;re using. Either way works. We&rsquo;re not
+        precious about it &mdash; it&rsquo;s your coffee.
+      </p>
+    </div>
+  </section>
+
+  <!-- Bean bags feature -->
+  <section class="border-y border-coffee-900/10 bg-paper-deep">
+    <div class="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 sm:py-20 md:grid-cols-2 md:gap-16">
+      <div class="mx-auto w-full max-w-sm">
+        <div class="-rotate-2 rounded-2xl border-8 border-cream-50 bg-cream-50 p-1.5 shadow-soft transition-transform duration-300 ease-out hover:-translate-y-1 hover:rotate-[1deg] hover:scale-105">
+          <Image
+            src={beansBag}
+            alt="Kafé Borg 100% Arabica coffee in a burlap bag, resting on roasted beans"
+            width={440}
+            height={442}
+            class="w-full rounded-xl object-cover"
+          />
+        </div>
+        <p class="mt-4 text-center font-body text-sm text-coffee-700">100% Arabica</p>
+      </div>
+      <div class="flex flex-col justify-center">
+        <h2 class="font-display text-3xl font-semibold text-coffee-950">Single origin, kept simple</h2>
+        <p class="mt-4 font-body text-[15px] leading-relaxed text-coffee-700">
+          If you know what you like, we&rsquo;ll sell you exactly that &mdash; no
+          upsell, no story about altitude and tasting notes unless you actually
+          want to hear it. Just good Arabica, roasted properly and weighed out
+          to what you need.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <div class="grid gap-10 md:grid-cols-2 md:gap-16">
+      <div class="order-2 flex flex-col justify-center md:order-1">
+        <h2 class="font-display text-3xl font-semibold text-coffee-950">
+          Or let us build you a blend
+        </h2>
+        <p class="mt-4 font-body text-[15px] leading-relaxed text-coffee-700">
+          Kaf&eacute; Borg&rsquo;s Traditional Maltese Coffee is a blend of coffee
+          and spices, made the way it&rsquo;s been made here for generations. If
+          you&rsquo;d rather have something built to your own taste, tell us what
+          you&rsquo;re after and we&rsquo;ll put together a blend of two, three or
+          four coffees until it&rsquo;s right.
+        </p>
+        <ul class="mt-6 space-y-3">
+          <li class="flex items-start gap-3 font-body text-[15px] text-coffee-800">
+            <MalteseCross class="mt-1 h-4 w-4 shrink-0 text-gold-500" />
+            Beans sold loose, by weight
+          </li>
+          <li class="flex items-start gap-3 font-body text-[15px] text-coffee-800">
+            <MalteseCross class="mt-1 h-4 w-4 shrink-0 text-gold-500" />
+            Ground fresh in the shop, to suit your brewer
+          </li>
+          <li class="flex items-start gap-3 font-body text-[15px] text-coffee-800">
+            <MalteseCross class="mt-1 h-4 w-4 shrink-0 text-gold-500" />
+            Custom blends of two, three or four coffees
+          </li>
+        </ul>
+      </div>
+      <div class="order-1 mx-auto w-full max-w-sm md:order-2 md:ml-auto">
+        <div class="rotate-2 rounded-2xl border-8 border-cream-50 bg-cream-50 p-1.5 shadow-soft transition-transform duration-300 ease-out hover:-translate-y-1 hover:rotate-[5deg] hover:scale-105">
+          <Image
+            src={coffeePack}
+            alt="A burlap bag labelled Traditional Maltese Coffee, a traditional blend of coffee and spices"
+            width={440}
+            height={551}
+            class="w-full rounded-xl object-cover"
+          />
+        </div>
+        <p class="mt-4 text-center font-body text-sm text-coffee-700">
+          Traditional Maltese Coffee &mdash; a blend of coffee &amp; spices
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other products -->
+  <section class="bg-coffee-950 py-16 text-paper sm:py-20">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <p class="font-body text-sm font-semibold uppercase tracking-[0.14em] text-gold-300">
+        Also in the shop
+      </p>
+      <h2 class="mt-3 font-display text-3xl font-semibold sm:text-4xl">
+        The small stuff that makes good coffee possible
+      </h2>
+      <p class="mt-4 max-w-xl font-body text-[15px] leading-relaxed text-paper/75">
+        Everything you need to actually brew what you buy, in case your moka
+        pot or filter is missing a part.
+      </p>
+      <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        {
+          extras.map((item) => (
+            <div class="rounded-2xl border border-paper/15 bg-paper/5 px-5 py-6 text-center">
+              <MalteseCross class="mx-auto h-5 w-5 text-red-500" />
+              <p class="mt-3 font-body text-sm font-semibold">{item}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-16 text-center sm:px-8 sm:py-20">
+    <h2 class="font-display text-3xl font-semibold text-coffee-950 sm:text-4xl">
+      Come tell us what you like your coffee to taste like.
+    </h2>
+    <p class="mx-auto mt-4 max-w-xl font-body text-[15px] leading-relaxed text-coffee-700">
+      We&rsquo;d rather talk it through in the shop than guess from a website.
+    </p>
+    <a
+      href="/visit/"
+      class="mt-8 inline-block rounded-full bg-red-700 px-7 py-3 font-body text-sm font-semibold text-cream-50 transition-colors hover:bg-red-800"
+    >
+      Visit Kaf&eacute; Borg
+    </a>
+  </section>
+</Layout>

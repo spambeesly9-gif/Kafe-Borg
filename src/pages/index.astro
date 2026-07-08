@@ -1,0 +1,200 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import MalteseCross from "../components/MalteseCross.astro";
+import BeanRow from "../components/BeanRow.astro";
+import storeFront from "../assets/images/store-front.webp";
+import beansBag from "../assets/images/arabica-beans-bag.png";
+import coffeePack from "../assets/images/coffee-pack.jpg";
+
+const values = [
+  {
+    title: "Roasted right here",
+    body: "Every bean is roasted, blended and ground on Tal-Balal Road — not in some distant factory. If you want it ground while you wait, we’ll do that too.",
+  },
+  {
+    title: "Priced the way it should be",
+    body: "“The best coffee at the best price” isn’t a slogan we hired someone to write. It’s the line Gaetano and Nicholas actually sign their letters with.",
+  },
+  {
+    title: "Four generations, one family",
+    body: "Nicholas and Gaetano learned this trade from their father, who learned it from his. Nobody in this shop is new to coffee.",
+  },
+];
+---
+
+<Layout title="Home">
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-grain">
+    <div
+      class="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28"
+    >
+      <div>
+        <p class="font-script text-2xl text-red-600">since our great-grandfather&rsquo;s day</p>
+        <h1 class="mt-2 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-coffee-950 text-balance sm:text-5xl lg:text-6xl">
+          The coffee shop next door has always known best.
+        </h1>
+        <p class="mt-6 max-w-xl font-body text-lg leading-relaxed text-coffee-700">
+          Kaf&eacute; Borg has been roasting, blending and grinding coffee on Tal-Balal
+          Road for four generations. Nicholas and Gaetano run it today the same way
+          their great-grandfather did &mdash; good beans, ground fresh in front of
+          you, never marked up more than they have to be.
+        </p>
+        <div class="mt-9 flex flex-wrap items-center gap-4">
+          <a
+            href="/coffee/"
+            class="rounded-full bg-coffee-950 px-6 py-3 font-body text-sm font-semibold text-paper transition-colors hover:bg-red-700"
+          >
+            See the coffee
+          </a>
+          <a
+            href="/visit/"
+            class="rounded-full border border-coffee-900/25 px-6 py-3 font-body text-sm font-semibold text-coffee-900 transition-colors hover:border-red-600 hover:text-red-600"
+          >
+            Find the shop
+          </a>
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-sm lg:mx-0 lg:justify-self-end">
+        <div class="absolute -inset-4 -z-10 rounded-[2rem] bg-gold-300/40 blur-2xl"></div>
+        <div class="-rotate-2 rounded-[1.75rem] border-8 border-cream-50 bg-cream-50 p-1.5 shadow-soft transition-transform duration-300 ease-out hover:-translate-y-1 hover:rotate-[1deg] hover:scale-105">
+          <Image
+            src={storeFront}
+            alt="The Kafé Borg shopfront on Tal-Balal Road, San Gwann, with its red awning"
+            width={480}
+            height={640}
+            class="w-full rounded-[1.25rem] object-cover"
+          />
+        </div>
+        <div
+          class="absolute -bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-coffee-900/10 bg-paper px-4 py-2 font-body text-xs font-semibold uppercase tracking-wide text-coffee-800 shadow-soft"
+        >
+          <MalteseCross class="h-3.5 w-3.5 text-red-600" />
+          Tal-Balal Road, San Gwann
+        </div>
+      </div>
+    </div>
+    <BeanRow class="mx-auto block h-4 w-full max-w-6xl px-5 text-coffee-900/70 sm:px-8" />
+  </section>
+
+  <!-- Values -->
+  <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <div class="grid gap-10 sm:grid-cols-3">
+      {
+        values.map((v) => (
+          <div>
+            <MalteseCross class="h-6 w-6 text-gold-500" />
+            <h3 class="mt-4 font-display text-xl font-semibold text-coffee-950">{v.title}</h3>
+            <p class="mt-2 font-body text-[15px] leading-relaxed text-coffee-700">{v.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Story teaser -->
+  <section class="border-y border-coffee-900/10 bg-paper-deep bg-grain">
+    <div class="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 sm:py-20 md:grid-cols-2 md:items-center md:gap-16">
+      <div class="order-2 md:order-1">
+        <p class="font-body text-sm font-semibold uppercase tracking-[0.14em] text-gold-600">
+          Our story
+        </p>
+        <h2 class="mt-3 font-display text-3xl font-semibold text-coffee-950 sm:text-4xl">
+          Not a brand. A family.
+        </h2>
+        <p class="mt-5 font-body text-[15px] leading-relaxed text-coffee-700">
+          Nicholas and Gaetano Borg are the fourth generation to roast coffee under
+          this name. They didn&rsquo;t inherit a business plan &mdash; they inherited
+          a way of roasting, and a shop full of regulars who noticed if the coffee
+          ever changed.
+        </p>
+        <a
+          href="/our-story/"
+          class="mt-6 inline-flex items-center gap-2 font-body text-sm font-semibold text-red-600 hover:text-red-700"
+        >
+          Read the full story
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+      <div class="order-1 mx-auto w-full max-w-xs md:order-2 md:ml-auto md:mr-0">
+        <div class="rotate-2 rounded-2xl border-8 border-cream-50 bg-cream-50 p-1.5 shadow-soft transition-transform duration-300 ease-out hover:-translate-y-1 hover:rotate-[5deg] hover:scale-105">
+          <Image
+            src={beansBag}
+            alt="A burlap bag of Kafé Borg 100% Arabica coffee resting on roasted beans"
+            width={420}
+            height={422}
+            class="w-full rounded-xl object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product teaser -->
+  <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <div class="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+      <div class="mx-auto w-full max-w-xs md:mx-0">
+        <div class="-rotate-2 rounded-2xl border-8 border-cream-50 bg-cream-50 p-1.5 shadow-soft transition-transform duration-300 ease-out hover:-translate-y-1 hover:rotate-[1deg] hover:scale-105">
+          <Image
+            src={coffeePack}
+            alt="A burlap bag labelled Traditional Maltese Coffee, a blend of coffee and spices"
+            width={420}
+            height={526}
+            class="w-full rounded-xl object-cover"
+          />
+        </div>
+      </div>
+      <div>
+        <p class="font-body text-sm font-semibold uppercase tracking-[0.14em] text-gold-600">
+          The coffee
+        </p>
+        <h2 class="mt-3 font-display text-3xl font-semibold text-coffee-950 sm:text-4xl">
+          Bought by weight. Ground how you like it.
+        </h2>
+        <p class="mt-5 font-body text-[15px] leading-relaxed text-coffee-700">
+          Take the beans home whole, or have us grind them in front of you to suit
+          whatever you brew with. Ask for a single origin, or let us build you a
+          blend of two, three or four. It&rsquo;s your coffee &mdash; we just roast
+          it.
+        </p>
+        <a
+          href="/coffee/"
+          class="mt-6 inline-flex items-center gap-2 font-body text-sm font-semibold text-red-600 hover:text-red-700"
+        >
+          Explore the coffee &amp; blends
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission quote -->
+  <section class="bg-coffee-950 py-16 text-paper sm:py-20">
+    <div class="mx-auto max-w-2xl px-5 text-center sm:px-8">
+      <MalteseCross class="mx-auto h-7 w-7 text-red-600" />
+      <p class="mt-6 font-display text-2xl italic leading-snug sm:text-3xl">
+        &ldquo;The best coffee at the best price.&rdquo;
+      </p>
+      <p class="mt-5 font-script text-2xl text-gold-300">Gaetano &amp; Nicholas Borg</p>
+    </div>
+  </section>
+
+  <!-- Visit band -->
+  <section class="bg-red-700 py-14 text-cream-50">
+    <div
+      class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 text-center sm:flex-row sm:text-left sm:px-8"
+    >
+      <div>
+        <h2 class="font-display text-2xl font-semibold sm:text-3xl">Come by and say hello.</h2>
+        <p class="mt-1.5 font-body text-cream-50/85">Tal-Balal Road, San Gwann SGN 9018, Malta</p>
+      </div>
+      <a
+        href="/visit/"
+        class="shrink-0 rounded-full bg-cream-50 px-6 py-3 font-body text-sm font-semibold text-red-700 transition-colors hover:bg-white"
+      >
+        Get directions
+      </a>
+    </div>
+  </section>
+</Layout>

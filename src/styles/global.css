@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/fraunces/wght-italic.css";
+@import "@fontsource/karla/400.css";
+@import "@fontsource/karla/500.css";
+@import "@fontsource/karla/600.css";
+@import "@fontsource/karla/700.css";
+@import "@fontsource/caveat/600.css";
+
+@theme {
+  --font-display: "Fraunces Variable", "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Caveat", cursive;
+
+  /* warm paper base, roasted coffee darks, heritage gold, awning red */
+  --color-paper: #faf3e6;
+  --color-paper-deep: #f2e6cd;
+  --color-paper-line: #e4d3ab;
+  --color-coffee-950: #211308;
+  --color-coffee-900: #2c1a0e;
+  --color-coffee-700: #5a3a24;
+  --color-coffee-500: #8a5a34;
+  --color-gold-600: #a9761c;
+  --color-gold-500: #c08d2e;
+  --color-gold-300: #e9c877;
+  --color-red-700: #9c2b23;
+  --color-red-600: #b6362a;
+  --color-cream-50: #fffdf8;
+
+  --shadow-soft: 0 12px 30px -12px rgb(44 26 14 / 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-coffee-900);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background-color: var(--color-gold-300);
+  color: var(--color-coffee-950);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* subtle paper grain, tiled, so sections never feel flat/digital */
+.bg-grain {
+  position: relative;
+}
+
+.bg-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.15 0 0 0 0 0.09 0 0 0 0 0.03 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.text-balance {
+  text-wrap: balance;
+}

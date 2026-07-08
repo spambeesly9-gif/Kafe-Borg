@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import MalteseCross from "../../components/MalteseCross.astro";
+import storeFront from "../../assets/images/store-front.webp";
+---
+
+<Layout
+  title="Our Story"
+  description="Four generations of the Borg family have roasted, blended and ground coffee at Kafé Borg in San Gwann, Malta."
+>
+  <section class="bg-grain">
+    <div class="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-24">
+      <p class="font-script text-2xl text-red-600">our story</p>
+      <h1 class="mt-2 font-display text-4xl font-semibold leading-tight text-coffee-950 text-balance sm:text-5xl">
+        Four generations. One small shop on Tal-Balal Road.
+      </h1>
+
+      <div class="mt-10 -rotate-1 rounded-2xl border-8 border-cream-50 bg-cream-50 shadow-soft transition-transform duration-300 ease-out hover:-translate-y-1 hover:rotate-[2deg] hover:scale-105">
+        <Image
+          src={storeFront}
+          alt="The Kafé Borg shopfront in San Gwann, Malta"
+          width={640}
+          height={853}
+          class="w-full rounded-xl object-cover"
+        />
+      </div>
+
+      <div class="prose-content mt-12 space-y-6 font-body text-[17px] leading-relaxed text-coffee-800">
+        <p>
+          Kaf&eacute; Borg started the way most good coffee shops do &mdash; with
+          someone who was serious about the roast, and no interest in cutting
+          corners to make more of it. That was Nicholas and Gaetano Borg&rsquo;s
+          great-grandfather. The shop has stayed in the family ever since, passed
+          down through three more generations of roasters who all learned the
+          same way: by standing next to the drum and watching it happen.
+        </p>
+        <p>
+          Today, Nicholas and Gaetano run Kaf&eacute; Borg themselves. They roast
+          the beans, build the blends, and grind coffee to order right there in
+          the shop &mdash; in front of whoever&rsquo;s waiting for it, ground to
+          suit whatever they&rsquo;re brewing it in at home. It&rsquo;s the kind
+          of thing that&rsquo;s hard to keep doing once a business gets big. Kaf&eacute;
+          Borg never got big. That was never really the plan.
+        </p>
+        <div class="rounded-2xl border border-gold-500/30 bg-paper-deep p-6 sm:p-8">
+          <MalteseCross class="h-6 w-6 text-red-600" />
+          <p class="mt-4 font-display text-xl italic leading-snug text-coffee-950 sm:text-2xl">
+            &ldquo;So, we hope you enjoy your visit, and please feel free to
+            contact us should you have any queries. Thank you.&rdquo;
+          </p>
+          <p class="mt-4 font-script text-xl text-coffee-700">
+            &mdash; Gaetano Borg &amp; Nicholas Borg
+          </p>
+        </div>
+        <p>
+          Ask around San Gwann and people will tell you the same thing: the
+          coffee tastes the way it always has, and the price has never tried to
+          catch up with what other places charge for less. That&rsquo;s not an
+          accident. It&rsquo;s the whole point of keeping a shop this size, run
+          by the people whose name is over the door.
+        </p>
+      </div>
+
+      <div class="mt-14 flex flex-wrap gap-4">
+        <a
+          href="/coffee/"
+          class="rounded-full bg-coffee-950 px-6 py-3 font-body text-sm font-semibold text-paper transition-colors hover:bg-red-700"
+        >
+          See the coffee we roast
+        </a>
+        <a
+          href="/visit/"
+          class="rounded-full border border-coffee-900/25 px-6 py-3 font-body text-sm font-semibold text-coffee-900 transition-colors hover:border-red-600 hover:text-red-600"
+        >
+          Come visit the shop
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
